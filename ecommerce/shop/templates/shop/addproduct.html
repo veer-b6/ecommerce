@@ -1,0 +1,634 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Create">
+  <meta name="author" content="Inovatik">
+
+  <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+  <meta property="og:site_name" content="" /> <!-- website name -->
+  <meta property="og:site" content="" /> <!-- website link -->
+  <meta property="og:title" content="" /> <!-- title shown in the actual shared post -->
+  <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+  <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+  <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+  <meta property="og:type" content="article" />
+
+  <title>Add Products</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+  <style>
+    html,
+    body {
+      width: 100%;
+      margin: 0px;
+      padding: 0px;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: Poppins;
+      padding: 0;
+      margin: 0;
+    }
+
+    .navbar-links {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+    }
+
+    .topnav-right {
+      float: right;
+    }
+
+    .logo {
+      height: 100%;
+      width: 17%;
+    }
+
+    .sbselect {
+      background: #ECEEF2;
+      box-shadow: inset -8px 0px 10px rgba(0, 0, 0, 0.12);
+      color: #1D2F6F;
+      font-size: 1.5rem;
+      /* margin-top: 5%; */
+      width: 80%;
+      padding: 5% 0% 5% 0%;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .sb {
+      color: #1D2F6F;
+      font-size: 1.5rem;
+      /* margin-top: 5%; */
+      width: 80%;
+      padding: 5% 0% 5% 0%;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .sb .text {
+      margin-left: 10%;
+    }
+
+    .sbselect .text {
+      margin-left: 10%;
+    }
+
+    #departments {
+      /* margin-top: 5%; */
+      color: #1d2f6f;
+      font-weight: bold;
+      background: #EBECEB;
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+      border-radius: 6px;
+      border: none;
+      width: 100%;
+      height: 50px;
+    }
+
+    #compose {
+      margin-top: 10%;
+      margin-bottom: 10%;
+      color: #1d2f6f;
+      font-weight: bold;
+      background: #EBECEB;
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+      border-radius: 6px;
+      border: none;
+      width: 100%;
+      height: 50px;
+      padding: 5% 7%
+    }
+
+    .all {
+      color: #1D2F6F;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .subject {
+      background: #EBECEB;
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+      border-radius: 6px;
+      padding: 4% 2% 4% 2%;
+      color: #1D2F6F;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .report {
+      font-size: 1rem;
+      color: #1D2F6F;
+      font-weight: bold;
+    }
+
+    @media screen and (max-width:600px) {
+      .sbselect {
+        width: 100%;
+        font-size: 1rem;
+      }
+
+      .sb {
+        width: 100%;
+        font-size: 1rem;
+      }
+
+      #departments {
+        font-size: 0.8rem;
+      }
+
+      #compose {
+        font-size: 0.8rem;
+      }
+
+      .all {
+        font-size: 1rem;
+        padding-left: 2%;
+      }
+
+      .prevreports {
+        padding-left: 2%;
+      }
+
+    }
+
+    body {
+      font-family: Poppins;
+      padding: 0;
+      margin: 0;
+    }
+
+    .navbar-links {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+    }
+
+    .topnav-right {
+      float: right;
+    }
+
+
+    .visitingcard {
+      background-image: url(./images/wave.png);
+      margin-top: 10%;
+      margin-bottom: 10%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position-y: bottom;
+      /* min-height: 100vh; */
+      border-radius: 15px;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+
+    .visitingcard #logo {
+      height: 40px;
+      margin-top: 10px;
+      margin-left: 10px;
+      border-radius: 15px;
+    }
+
+    .visitingcard #saarathi {
+      width: 100%;
+    }
+
+    .visitingcard .row {
+      margin-left: 5%;
+      margin-right: 5%;
+      /* margin-top: 10%; */
+    }
+
+    .visitingcard .details {
+      font-family: Times New Roman;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1rem;
+      color: #1D2F6F;
+      border-left: 3px solid #1D2F6F;
+      padding-left: 25px;
+    }
+
+    .visitingcard #text {
+      margin-top: 10%;
+    }
+
+    @media screen and (max-width: 850px) {
+      .visitingcard .details {
+        padding-left: 10px;
+      }
+
+      .visitingcard .row {
+        margin-left: 0%;
+        margin-right: 0%;
+        margin-top: 0%;
+      }
+
+      .visitingcard #text {
+        margin-top: 0;
+      }
+    }
+
+    /* select:hover {
+      background:red;
+    } */
+    .companycard .card1 {
+      background: #FFFFFF;
+      box-shadow: inset 0px 4px 5px #CCCCCC;
+      border-radius: 10px;
+      padding: 2%;
+    }
+
+    .companycard .card {
+      box-shadow: 0px 8px 10px #CCCCCC;
+      border-radius: 10px;
+      background: #ECEEF2;
+      /* background: linear-gradient(116.03deg, rgba(255, 255, 255, 0.5) -2.06%, rgba(196, 196, 196, 0) 116.18%); */
+      /* backdrop-filter: blur(4px); */
+    }
+
+    .companycard .cardimg {
+      padding: 10%;
+      background: white;
+    }
+
+    .companycard img {
+      width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cname {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #1D2F6F;
+    }
+
+    .cterms {
+      float: right;
+      font-size: 0.8rem;
+      color: #1D2F6F;
+    }
+
+    .odetails {
+      font-size: 1rem;
+      color: #1D2F6F;
+      margin-top: 2%;
+    }
+
+    .idetails {
+      margin-top: 5%;
+      font-size: 0.8rem;
+      color: #1D2F6F;
+      font-weight: bold;
+    }
+
+    .idetails2 {
+      font-size: 0.8rem;
+      color: #1D2F6F;
+      font-weight: normal;
+      margin-left: 15%;
+    }
+
+    .odetails i {
+      margin-left: 1%;
+      margin-top: 3%;
+    }
+
+    .idetails i {
+      margin-right: 5%;
+    }
+
+    .desc {
+      margin-top: 3%;
+      color: #1D2F6F;
+      font-size: 0.9rem;
+      height: 150px;
+      overflow-y: scroll;
+    }
+
+    .action {
+      background: rgba(29, 47, 111, 0.5);
+      box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.15);
+      border-radius: 6px;
+      color: white;
+      font-size: 1rem;
+      padding: 4% 2% 4% 2%;
+    }
+
+    /* custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: white;
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
+      border-radius: 20px;
+      border: 1px solid transparent;
+      background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: transparent;
+    }
+
+    @media screen and (max-width:600px) {
+      .cname {
+        font-size: 1rem;
+      }
+
+      .cterms {
+        font-size: 0.4rem;
+      }
+
+      .odetails {
+        font-size: 0.6rem;
+      }
+
+      .idetails {
+        font-size: 0.6rem;
+      }
+
+      .idetails2 {
+        font-size: 0.5rem;
+      }
+
+      .desc {
+        font-size: 0.6rem;
+      }
+
+      .action {
+        font-size: 0.6rem;
+      }
+    }
+
+    .decorated {
+      color: #1D2F6F;
+      font-weight: bold;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      left: -10px;
+      top: 5%;
+      background: #EBECEB;
+      box-shadow: inset -8px 0px 10px rgba(0, 0, 0, 0.12);
+      border: none;
+      border-radius: 10px;
+    }
+
+    .undecorated {
+      padding: 5% 4%;
+      background: none;
+      border: none;
+      color: #1d2f6f;
+      font-weight: bold;
+    }
+
+    .dropbox {
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+      width: 80%;
+      border-radius: 6px;
+    }
+
+    .dropdown-toggle {
+      background: #EBECEB;
+      border: none;
+      padding: 2%;
+      width: 100%;
+      border-radius: 6px;
+      color: #1d2f6f;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .dropbox label {
+      font-size: 0.9rem;
+    }
+
+    label {
+      color: #1d2f6f;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .form-control {
+      background: #EBECEB;
+      box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.15);
+      border-radius: 6px;
+      color: #1d2f6f;
+    }
+
+    button:focus {
+      outline: none;
+      border: none
+    }
+
+    @media screen and (max-width: 600px) {
+      .dropbox {
+        width: 100%;
+      }
+    }
+
+    .inputImage {
+      background: #EBECEB;
+      box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.15);
+      border-radius: 6px;
+      color: #1d2f6f;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light" style="background:#EAEDF0;padding: 0;height: 80px;position: relative;z-index: 5;">
+    <h6 style="float:left;padding-left:5%;color:#1d2f6f">WELCOME TO RAVIS SHOP</h6>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02" style="float:right;">
+      <ul class="navbar-nav" style="width:80%;margin-left:60%;">
+
+      </ul>
+    </div>
+  </nav>
+  <div class="container-fluid" style="padding: 2% 0 0 0">
+    <div class="row">
+        <div class="col-2">
+
+        </div>
+        <div class="col-8">
+          <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="container-fluid">
+              <div class="">
+                <div class="">
+
+                  <div class="form-group row">
+          
+                    <div class="dropbox">
+                      <button class="dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Top categories
+                      </button>
+                      <div class="dropdown-menu" style="width: 95%;background-color: #EBECEB;border:none;box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);" aria-labelledby="interndepart">
+                        {% for top in tops %}
+                        <a class="dropdown-item" href="#">
+                          <div class="form-check">
+                          <input class="form-check-input" name="toppings"
+                          type="checkbox" value="{{ top }}" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            {{top}}
+                          </label>
+                        </div>
+                      </a>
+                      {% endfor %}
+                      </div>
+                    </div>
+                    <br />
+                    <br>
+                    <br>
+                 
+                </div>
+
+                  <div class="form-group row">
+                    <label for="name" class="col-md-3 col-form-label">Product Name</label>
+                    <div class="col-md-6">
+                      <input required name = "productname" class="form-control" id="name" type="text" placeholder="Enter Product Name">
+                    </div>
+                  </div>
+                  <br>
+
+                </div>
+              </div>
+              <div class="form-group row" style="padding: 3% 1% 3% 1%;">
+                <div style="color: #1d2f6f;font-size: 1rem;font-weight: bold;">Product Description</div><br><br>
+                <textarea required name = "productdesc" class="form-control" type="text" rows="5" ></textarea>
+              </div>
+              <br>
+              <div class="form-group row">
+                <label for="product_logo" class="col-md-3 col-form-label">Product Image</label>
+                <div class="col-md-6">
+                  <input type="file" id="imgupload" name="image_logo"/>
+                </div>
+              </div><br>
+              <div class="form-group row" style="padding: 3% 1% 3% 1%;">
+                <div style="color: #1d2f6f;font-size: 1rem;font-weight: bold;">Product Quantity</div><br><br>
+                <input required name = "product_qty" class="form-control" type="number">
+              </div>
+              <br>
+              <div class="form-group row">
+                <label for="product_type" class="col-md-3 col-form-label">Product Type</label>
+                <select name="product_type" id="product_type">
+                  <option>&nbsp;&nbsp;&nbsp;Select</option>
+                  <option value = "Chair">Chair</option>
+                  <option value = "Table">Table</option>
+                  <option value = "Others">Others</option>
+                </select>
+              </div>
+              <br>
+              <div class="form-group row" style="padding: 3% 1% 3% 1%;">
+                <div style="color: #1d2f6f;font-size: 1rem;font-weight: bold;">Product Price</div><br><br>
+                <input required name = "product_price" class="form-control" type="number">
+              </div>
+
+
+              <div class="row">
+                <div class="col-md-5">
+
+                </div>
+                <div class="col-md-2">
+                  <button class="btn btn-default" type="submit" style="float: middle;background: #1D2F6F;
+                    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+                    border-radius: 6px;color: white;">Publish</button>
+                </div>
+                <div class="col-md-5">
+
+                </div>
+              </div>
+            </div>
+          </form>
+            <br><br>
+          </form>
+        </div>
+      </div>
+
+
+
+    </div>
+    <div class="modal fade" id="composemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" style="background-color: #EAEDF0;">
+            <h5 class="modal-title" id="exampleModalLongTitle" style="color: #1D2F6F;font-weight: bold;">Leave application</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-2"></div>
+                <div class="col-9">
+                  <form>
+                    <div style="background: #EBECEB;
+                                box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);border:none">
+
+                    </div>
+                    <br />
+                    <input class="form-control" type="text" placeholder="Start Date" style="background: #EBECEB;
+                                box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);border:none"><br />
+                    <input class="form-control" type="text" placeholder="End Date" style="background: #EBECEB;
+                                box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);border:none"><br />
+                    <textarea class="form-control" rows="5" type="text" placeholder="Reason for leave" style="background: #EBECEB;
+                                 box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);border:none"></textarea><br />
+                    <button type="submit" class="btn btn-default" data-dismiss="modal" style="background-color: #1D2F6F;color: white;float: right;">Submit</button>
+                  </form>
+                </div>
+                <div class="col-1"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/19efc023fd.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    function contentchange() {
+      document.getElementById("from").innerHTML = "New ID";
+      document.getElementById("to").innerHTML = "New ID";
+      document.getElementById("sdate").innerHTML = "New Date";
+      document.getElementById("edate").innerHTML = "New Date";
+      document.getElementById("content").innerHTML = "New content"
+    }
+    $(function() {
+      $('.selectpicker').selectpicker();
+    });
+  </script>
+<script>
+  $('#departments').on('change',function(){
+  $('#departments_form').submit();
+  });
+</script>
+</body>
+
+</html>
